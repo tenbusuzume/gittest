@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:switch="${id}">
+	<p th:case="1" th:text="1">message.</p>
+	<p th:case="2" th:text="2">message.</p>
+	<p th:case="3" th:text="3">message.</p>
+	<p th:case="4" th:text="4">message.</p>
+	<p th:case="5" th:text="5">message.</p>
+	<p th:case="*" th:text="other">message.</p>
+	</div>
+</body>
+</html>
