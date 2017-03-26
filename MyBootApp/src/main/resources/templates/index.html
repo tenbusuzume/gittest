@@ -1,17 +1,60 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>top page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+tr {
+	margin: 5px;
+}
+
+th {
+	padding: 5px;
+	color: white;
+	background: darkgray;
+}
+
+td {
+	padding: 5px;
+	color: black;
+	background: #e0e0ff;
+}
+
+.err {
+	color: red;
+}
+</style>
 </head>
 <body>
-	<div th:switch="${id}">
-	<p th:case="1" th:text="1">message.</p>
-	<p th:case="2" th:text="2">message.</p>
-	<p th:case="3" th:text="3">message.</p>
-	<p th:case="4" th:text="4">message.</p>
-	<p th:case="5" th:text="5">message.</p>
-	<p th:case="*" th:text="other">message.</p>
-	</div>
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p th:text="${msg}"></p>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>メール</th>
+			<th>年齢</th>
+			<th>メモ(TEL)</th>
+		</tr>
+		<tr th:each="obj : ${datalist}">
+			<td th:text="${obj.id}"></td>
+			<td th:text="${obj.name}"></td>
+			<td th:text="${obj.mail}"></td>
+			<td th:text="${obj.age}"></td>
+			<td th:text="${obj.memo}"></td>
+		</tr>
+	</table>
 </body>
 </html>
